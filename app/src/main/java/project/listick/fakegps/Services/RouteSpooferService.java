@@ -507,7 +507,7 @@ public class RouteSpooferService extends Service {
                         mSpoofRoute.get(nextPosAngle).getLatitude(), mSpoofRoute.get(nextPosAngle).getLongitude(),
                         mSpoofRoute.get(nextPosAngle2).getLatitude(), mSpoofRoute.get(nextPosAngle2).getLongitude());
                 double coefficient = angle / 180;
-                brakeSpeed = (int) (mSpeed * coefficient);
+                brakeSpeed = (int) Math.max(10, Math.min(30, mSpeed * coefficient));
                 isNeedBrake = true;
             }
 
